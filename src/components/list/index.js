@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
+import { connect } from 'react-redux';
+
+  const mapStateToProps = (state) => ({
+    countries: state.countries
+  })
 
 const List = () => {
+
+
   const [countries, setCountries] = useState([]);
   const [filteredCountriesListItems, setFilteredCountriesListItems] = useState(
     []
@@ -78,4 +85,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default connect(mapStateToProps)(List);
